@@ -1,0 +1,25 @@
+name: Test_actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Update Environment
+      run: sudo apt update -y
+
+    - name: Run_script
+      run: bash test.sh
+
+    - name: Output
+      uses: actions/upload-artifact@v4
+      with:
+        name: output
+        path: output.tar
