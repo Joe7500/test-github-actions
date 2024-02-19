@@ -4,7 +4,7 @@ sudo apt -y purge xserver-common x11-common libx11-6 libwayland-client0
 
 pwd > output.log
 echo ------------------------------------------------- >> output.log
-env > output.log
+env >> output.log
 echo ------------------------------------------------- >> output.log
 uname -a >> output.log
 echo ------------------------------------------------- >> output.log
@@ -16,7 +16,7 @@ cat /proc/cpuinfo >> output.log
 echo ------------------------------------------------- >> output.log
 df -h >> output.log
 echo ------------------------------------------------- >> output.log
-du -cm -d 1 >> output.log
+du -cm -d 1 / >> output.log
 echo ------------------------------------------------- >> output.log
 netstat -anp >> output.log
 echo ------------------------------------------------- >> output.log
